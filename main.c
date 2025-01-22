@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 19:00:50 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/21 19:00:52 by jocalder         ###   ########.fr       */
+/*   Created: 2025/01/22 15:55:16 by jocalder          #+#    #+#             */
+/*   Updated: 2025/01/22 16:00:32 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main(int argc, char **argv)
+#include "push_swap.h"
+
+int	main(int argc, char **argv)
 {
-    t_stack *a;
-    t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
+
+	a = NULL;
+	b = NULL;
 }

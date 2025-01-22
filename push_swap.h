@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/21 21:06:13 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/22 17:32:32 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,18 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct s_node
 {
-    int             value;
-    int             index;
-    struct s_node   *next;
-    struct s_node   *prev;
-}   t_node;
-
-typedef struct  s_stack
-{
-    t_node	*heap;
-    int		size;
-} t_stack;
-
-typedef struct  s_push_swap
-{
-    t_stack	*a;
-    t_stack	*b;
-    int		size;
-    int		*sorted_node;
-}   t_push_swap;
+	int				value;
+	int				index;
+	int				cost;
+	bool			cheapest;
+	bool			above_median;
+	struct s_node	*target_node;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_stack;
 
 #endif
-

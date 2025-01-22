@@ -3,11 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:16:43 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/21 19:16:47 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/22 17:09:48 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+void	reverse_rotate(t_node *stack)
+{
+}

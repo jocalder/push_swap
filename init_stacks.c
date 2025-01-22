@@ -3,11 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/21 19:01:41 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:16:30 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+t_stack	*initialize_stack(char **number)
+{
+	t_stack	*stack;
+	t_stack	*new_node;
+	long	value;
+	int		i;
 
+	stack = NULL;
+	i = 0;
+	while (number[i])
+	{
+		if (!is_valid_number(number[i]))
+			ft_error();
+		value = ft_atol(number[i]);
+		if (value < INT_MIN || value > INT_MAX)
+			ft_error();
+		new_node = create_node((int)value);
+		if (!new_node)
+			ft_error()
+		i++;
+	}
+	return (stack);
+}
+
+t_stack	*create_node(int value)
+{
+	t_stack	*new_node;
+
+	new_node = (t_stack) * (sizeof(t_satck));
+	if (!new_node)
+		return (NULL);
+	new_node->value = value;
+	new_node->index = -1;
+	new_node->cost = 0;
+	new_node->cheapest = false;
+	new_node->above_median = false;
+	new_node->target_node = NULL;
+	new_node->prev = NULL;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+void	append_node(t_satck **stack, t_stack *new_node)
+{
+	if (!*stack || !new_node)
+		return (NULL);
+	if (*stack == NULL)
+}
