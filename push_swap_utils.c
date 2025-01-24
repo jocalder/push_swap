@@ -6,24 +6,29 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:00:20 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/22 21:13:41 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/24 20:47:12 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error()
+void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
+
 bool	is_valid_number(const char *str)
 {
 	int	i;
 
 	i = 0;
+	while (str[i] == 32)
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (str[i] == '\0')
+		return (false);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -31,6 +36,30 @@ bool	is_valid_number(const char *str)
 		i++;
 	}
 	return (true);
+}
+
+bool	check_duplicate(char **numbers)
+{
+	int		i;
+	int		j;
+	long	current_number;
+	long	parsed_number;
+
+	i = 0;
+	while (numbers[i])
+	{
+		current_number = ft_atol(numbers[i]);
+		j = i + 1;
+		while (numbers[j])
+		{
+			parsed_number = ft_atol(numbers[j])
+			if (current_number == parsed_number)
+				return (true);
+			j++;
+		}
+		i++;
+	}
+	return (false);
 }
 
 static long	ft_atol(const char *s)

@@ -6,11 +6,11 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/22 21:16:30 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/24 21:04:46 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_stack	*initialize_stack(char **number)
+t_stack	*initialize_stack(char **numbers)
 {
 	t_stack	*stack;
 	t_stack	*new_node;
@@ -19,16 +19,19 @@ t_stack	*initialize_stack(char **number)
 
 	stack = NULL;
 	i = 0;
-	while (number[i])
+	while (numbers[i])
 	{
-		if (!is_valid_number(number[i]))
+		if (!is_valid_number(numbers[i]))
 			ft_error();
-		value = ft_atol(number[i]);
+		if (check_duplicate(numbers[i]))
+			ft_error();
+		value = ft_atol(numbers[i]);
 		if (value < INT_MIN || value > INT_MAX)
 			ft_error();
 		new_node = create_node((int)value);
 		if (!new_node)
 			ft_error()
+		append_node(&stack, new_node);
 		i++;
 	}
 	return (stack);
@@ -38,7 +41,7 @@ t_stack	*create_node(int value)
 {
 	t_stack	*new_node;
 
-	new_node = (t_stack) * (sizeof(t_satck));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
@@ -52,9 +55,21 @@ t_stack	*create_node(int value)
 	return (new_node);
 }
 
-void	append_node(t_satck **stack, t_stack *new_node)
+void	append_node(t_stack **stack, t_stack *new_node)
 {
 	if (!*stack || !new_node)
-		return (NULL);
+		ft_error();
 	if (*stack == NULL)
+	{
+		*stack = new_node;
+		new_node->next = NULL;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		new_node = *stack;
+		new_node->prev = NULL;
+		(*stack)->prev = new_node;
+		*stack = new_node;
+	}
 }
