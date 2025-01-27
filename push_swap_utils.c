@@ -6,15 +6,18 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:00:20 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/24 20:47:12 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/27 18:49:10 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
+	if (!str)
+		printf("Error\n");
+	else
+		printf("Error: %s\n", str);
 	exit(EXIT_FAILURE);
 }
 
@@ -52,7 +55,7 @@ bool	check_duplicate(char **numbers)
 		j = i + 1;
 		while (numbers[j])
 		{
-			parsed_number = ft_atol(numbers[j])
+			parsed_number = ft_atol(numbers[j]);
 			if (current_number == parsed_number)
 				return (true);
 			j++;
@@ -62,7 +65,7 @@ bool	check_duplicate(char **numbers)
 	return (false);
 }
 
-static long	ft_atol(const char *s)
+long	ft_atol(const char *s)
 {
 	long	result;
 	int		sign;

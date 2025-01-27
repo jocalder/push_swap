@@ -6,9 +6,11 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/24 21:04:46 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:26:38 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 t_stack	*initialize_stack(char **numbers)
 {
@@ -22,15 +24,15 @@ t_stack	*initialize_stack(char **numbers)
 	while (numbers[i])
 	{
 		if (!is_valid_number(numbers[i]))
-			ft_error();
-		if (check_duplicate(numbers[i]))
-			ft_error();
+			ft_error("no es digit");
+		if (check_duplicate(&numbers[i]))
+			ft_error("esta duplicado");
 		value = ft_atol(numbers[i]);
 		if (value < INT_MIN || value > INT_MAX)
-			ft_error();
+			ft_error("fuera de INT");
 		new_node = create_node((int)value);
 		if (!new_node)
-			ft_error()
+			ft_error("Allocated memory failed");
 		append_node(&stack, new_node);
 		i++;
 	}
@@ -57,8 +59,11 @@ t_stack	*create_node(int value)
 
 void	append_node(t_stack **stack, t_stack *new_node)
 {
-	if (!*stack || !new_node)
-		ft_error();
+	t_stack	*last;
+
+	last = *stack;
+	if (!stack || !new_node)
+		ft_error("stack doesn't exist or node");
 	if (*stack == NULL)
 	{
 		*stack = new_node;
@@ -67,9 +72,36 @@ void	append_node(t_stack **stack, t_stack *new_node)
 	}
 	else
 	{
-		new_node = *stack;
-		new_node->prev = NULL;
-		(*stack)->prev = new_node;
-		*stack = new_node;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new_node;
+		new_node->prev = last;
+		new_node->next = NULL;
+	}
+}
+
+t_stack	*get_last(t_stack **stack)
+{
+	t_stack	*last;
+
+	last = *stack;
+	if (!*stack)
+		ft_error("Stack doesn't exist");
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	return (last);
+}
+
+void	print_stack(t_stack **stack)
+{
+	t_stack	*current;
+
+	current = *stack;
+	while (current)
+	{
+		printf("%d\n", current->value);
+		current = current->next;
 	}
 }

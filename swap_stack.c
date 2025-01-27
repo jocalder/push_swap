@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:15:29 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/24 21:17:14 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:31:50 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	swap(t_stack **stack)
 
 void	ss(t_stack *stack)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(&a);
+	swap(&b);
 }
