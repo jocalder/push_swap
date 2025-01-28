@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:55:16 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/27 22:07:44 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/28 01:51:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int	main(int argc, char **argv)
 	{
 		numbers = ft_split(argv[1], ' ');
 		a = initialize_stack(numbers);
+		swap(&a);
 		print_stack(&a);
+		print_stack(&b);
 	}
 	else
 		ft_error("No existen argumentos");

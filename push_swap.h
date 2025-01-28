@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/27 21:26:19 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/01/28 01:35:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_stack	*create_node(int value);
 t_stack	*get_last(t_stack **stack);
 void	append_node(t_stack **stack, t_stack *new_node);
 void	ft_error(char *str);
+void	swap(t_stack **stack);
 bool	is_valid_number(const char *str);
 bool	check_duplicate(char **numbers);
 long	ft_atol(const char *s);
