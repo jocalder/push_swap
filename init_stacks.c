@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/27 21:26:38 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:50:19 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,24 @@ t_stack	*get_last(t_stack **stack)
 	return (last);
 }
 
+int	find_min(t_stack *stack)
+{
+	int		smallest;
+	t_stack	*head;
+
+	head = stack;
+	smallest = stack->value;
+	if (!stack || !head)
+		ft_error ("Stack doesn't exist");
+	while (stack)
+	{
+		if (smallest > stack->value)
+			smallest = stack->value;
+		stack = stack->next;
+	}
+	return (smallest);
+}
+
 void	print_stack(t_stack **stack)
 {
 	t_stack	*current;
@@ -101,7 +119,8 @@ void	print_stack(t_stack **stack)
 	current = *stack;
 	while (current)
 	{
-		printf("%d\n", current->value);
+		printf("Stack: %d\n", current->value);
+		//printf("Index: %d\n", current->index);
 		current = current->next;
 	}
 }

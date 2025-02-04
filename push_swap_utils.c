@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:00:20 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/28 01:18:01 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/04 15:17:25 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,11 @@ bool	is_valid_number(const char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] == 32)
-		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if (str[i] == '0')
-		return (false);
 	if (str[i] == '\0')
+		return (false);
+	if (str[i] == '0' && i == 1)
 		return (false);
 	while (str[i])
 	{

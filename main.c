@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:55:16 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/28 01:51:37 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/04 18:07:01 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,36 @@ int	main(int argc, char **argv)
 	{
 		numbers = ft_split(argv[1], ' ');
 		a = initialize_stack(numbers);
-		swap(&a);
+		index_stack(a);
+		//sort_two(&a);
+		//sort_three(&a);
+		//sort_four(&a, &b);
+		sort_five(&a, &b);
 		print_stack(&a);
 		print_stack(&b);
 	}
 	else
 		ft_error("No existen argumentos");
+}
+
+void	index_stack(t_stack *a)
+{
+	t_stack	*current;
+	t_stack	*compare;
+	int		index;
+
+	current = a;
+	while (current)
+	{
+		index = 0;
+		compare = a;
+		while (compare)
+		{
+			if (compare->value < current->value)
+				index++;
+			compare = compare->next;
+		}
+		current->index = index;
+		current = current->next;
+	}
 }

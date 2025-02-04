@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:15:29 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/28 01:41:22 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/04 12:57:33 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_stack **stack)
 	t_stack	*second;
 
 	if (!*stack || !stack || !(*stack)->next)
-		ft_error("stack doesn't exist");
+		return ;
 	first = *stack;
 	second = first->next;
 	first->next = second->next;
@@ -30,3 +30,21 @@ void	swap(t_stack **stack)
 	*stack = second;
 }
 
+void	sa(t_stack **a)
+{
+	swap(a);
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_stack **b)
+{
+	swap(b);
+	if (*b)
+		write(1, "sb\n", 3);
+}
+
+void	ss(t_stack **a, t_stack **b)
+{
+	sa(a);
+	sb(b);
+}
