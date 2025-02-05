@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:00:20 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/04 15:17:25 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:59:25 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ long	ft_atol(const char *s)
 	return (result * sign);
 }
 
-int	list_size(t_stack *stack)
+int	ft_list_size(t_stack *stack)
 {
 	int	size;
 

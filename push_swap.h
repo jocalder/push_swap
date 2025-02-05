@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/04 18:06:15 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/05 22:01:32 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ t_stack	*initialize_stack(char **numbers);
 t_stack	*create_node(int value);
 t_stack	*get_last(t_stack **stack);
 int		find_min(t_stack *stack);
+int		ft_list_size(t_stack *stack);
+int		ft_square(int number);
+int		ft_biggest(t_stack *b);
 void	append_node(t_stack **stack, t_stack *new_node);
 void	ft_error(char *str);
 void	swap(t_stack **stack);
@@ -58,10 +61,11 @@ void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
+void	stack_a_to_b(t_stack **a, t_stack **b);
+void	stack_b_to_a(t_stack **a, t_stack **b);
 bool	is_valid_number(const char *str);
 bool	check_duplicate(char **numbers);
 long	ft_atol(const char *s);
-int		list_size(t_stack *stack);
 void	print_stack(t_stack **stack);
 
 #endif
