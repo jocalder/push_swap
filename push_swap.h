@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/05 22:01:32 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:35:27 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ typedef struct s_node
 	int				value;
 	int				index;
 	int				cost;
-	bool			cheapest;
-	bool			above_median;
-	struct s_node	*target_node;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_stack;
@@ -39,6 +36,7 @@ int		find_min(t_stack *stack);
 int		ft_list_size(t_stack *stack);
 int		ft_square(int number);
 int		ft_biggest(t_stack *b);
+int		ft_get_position(t_stack *b, int current);
 void	append_node(t_stack **stack, t_stack *new_node);
 void	ft_error(char *str);
 void	swap(t_stack **stack);

@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:55:16 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/05 22:21:41 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:12:05 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ int	main(int argc, char **argv)
 		a = initialize_stack(numbers);
 		index_stack(a);
 		stack_a_to_b(&a, &b);
+		//print_stack(&b);
 		stack_b_to_a(&a, &b);
-		printf("stack_a\n");
-		print_stack(&a);
-		printf("stack_b\n");
-		print_stack(&b);
+		//printf("stack_a\n");
+		//print_stack(&a);
+		//printf("stack_b\n");
+		//print_stack(&b);
 	}
 	else
 		ft_error("No existen argumentos");

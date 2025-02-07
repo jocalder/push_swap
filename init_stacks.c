@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/04 17:50:19 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:32:27 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,6 @@ t_stack	*create_node(int value)
 		return (NULL);
 	new_node->value = value;
 	new_node->index = -1;
-	new_node->cost = 0;
-	new_node->cheapest = false;
-	new_node->above_median = false;
-	new_node->target_node = NULL;
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	return (new_node);

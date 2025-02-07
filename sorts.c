@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:40:49 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/04 18:05:48 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:50:56 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,8 @@ void	sort_four(t_stack **a, t_stack **b)
 	smallest = find_min(*a);
 	if (!*a || !a)
 		return ;
-	printf("valor de smallest: %d\n", smallest);
 	while ((*a)->value != smallest)
 	{
-		printf("entra al bucle\n");
 		ra(a);
 	}
 	pb(a, b);
@@ -67,10 +65,8 @@ void	sort_five(t_stack **a, t_stack **b)
 	smallest = find_min(*a);
 	if (!*a || !a)
 		return ;
-	printf("valor de smallest: %d\n", smallest);
 	while ((*a)->value != smallest)
 	{
-		printf("entra al bucle\n");
 		ra(a);
 	}
 	pb(a, b);

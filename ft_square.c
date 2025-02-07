@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:03:29 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/05 22:05:46 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:49:03 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,22 @@ int	ft_biggest(t_stack *b)
 		b = b->next;
 	}
 	return (biggest);
+}
+
+int	ft_get_position(t_stack *b, int current)
+{
+	int	position;
+	t_stack *temp;
+
+	temp = b;
+	position = 0;
+	while (b)
+	{
+		if (b->index == current)
+			return (position);
+		position++;
+		b = b->next;
+	}
+	b = temp;
+	return (-1);
 }
