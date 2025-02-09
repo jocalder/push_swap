@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_square.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:03:29 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/07 19:49:03 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:12:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,26 @@ int	ft_get_position(t_stack *b, int current)
 
 	temp = b;
 	position = 0;
-	while (b)
+	while (temp)
 	{
-		if (b->index == current)
+		if (temp->index == current)
 			return (position);
 		position++;
-		b = b->next;
+		temp = temp->next;
 	}
-	b = temp;
 	return (-1);
+}
+
+void	ft_free_numbers(char **numbers)
+{
+	int		i;
+
+	i = 0;
+	while (numbers[i])
+	{
+		free(numbers[i]);
+		i++;
+	}
+	free(numbers);
+	ft_error();
 }

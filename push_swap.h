@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/07 17:35:27 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/09 20:41:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_square(int number);
 int		ft_biggest(t_stack *b);
 int		ft_get_position(t_stack *b, int current);
 void	append_node(t_stack **stack, t_stack *new_node);
-void	ft_error(char *str);
+void	ft_error();
 void	swap(t_stack **stack);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
@@ -61,9 +61,10 @@ void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
 void	stack_a_to_b(t_stack **a, t_stack **b);
 void	stack_b_to_a(t_stack **a, t_stack **b);
+void	ft_free_numbers(char **numbers);
 bool	is_valid_number(const char *str);
 bool	check_duplicate(char **numbers);
 long	ft_atol(const char *s);
-void	print_stack(t_stack **stack);
+//void	print_stack(t_stack **stack);
 
 #endif

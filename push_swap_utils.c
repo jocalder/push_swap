@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:00:20 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/05 19:59:25 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/09 20:42:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(char *str)
+void	ft_error()
 {
-	if (!str)
-		printf("Error\n");
-	else
-		printf("Error: %s\n", str);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
 
