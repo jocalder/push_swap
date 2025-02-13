@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:01:39 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/09 21:17:50 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/13 16:11:46 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,16 @@ t_stack	*initialize_stack(char **numbers)
 	while (numbers[i])
 	{
 		if (!is_valid_number(numbers[i]))
-			ft_error();
+			return(ft_free_stack(&stack), NULL);
 		if (check_duplicate(&numbers[i]))
-			ft_error();
+			return(ft_free_stack(&stack), NULL);
 		value = ft_atol(numbers[i]);
 		if (value < INT_MIN || value > INT_MAX)
-			ft_error();
+			return(ft_free_stack(&stack), NULL);
 		new_node = create_node((int)value);
 		if (!new_node)
-		{
-			free(new_node);
-			ft_error();
-		}
+			return(ft_free_stack(&stack), NULL);
 		append_node(&stack, new_node);
-		free(new_node);
 		i++;
 	}
 	return (stack);
@@ -62,8 +58,6 @@ void	append_node(t_stack **stack, t_stack *new_node)
 	t_stack	*last;
 
 	last = *stack;
-	if (!stack || !new_node)
-		ft_error ();
 	if (*stack == NULL)
 	{
 		*stack = new_node;
@@ -79,39 +73,7 @@ void	append_node(t_stack **stack, t_stack *new_node)
 		new_node->next = NULL;
 	}
 }
-
-t_stack	*get_last(t_stack **stack)
-{
-	t_stack	*last;
-
-	last = *stack;
-	if (!*stack)
-		ft_error ();
-	while (last->next != NULL)
-	{
-		last = last->next;
-	}
-	return (last);
-}
-
-int	find_min(t_stack *stack)
-{
-	int		smallest;
-	t_stack	*head;
-
-	head = stack;
-	smallest = stack->value;
-	if (!stack || !head)
-		ft_error ();
-	while (stack)
-	{
-		if (smallest > stack->value)
-			smallest = stack->value;
-		stack = stack->next;
-	}
-	return (smallest);
-}
-//auxiliar function that used to check if it was the stack ok
+//auxiliar function that use to check if the stack is ok
 /*void	print_stack(t_stack **stack)
 {
 	t_stack	*current;
@@ -120,7 +82,7 @@ int	find_min(t_stack *stack)
 	while (current)
 	{
 		printf("Stack: %d\n", current->value);
-		printf("Index: %d\n", current->index);
+		//printf("Index: %d\n", current->index);
 		current = current->next;
 	}
 }*/

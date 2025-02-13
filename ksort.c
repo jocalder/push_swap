@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:08:58 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/07 19:50:02 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:52:25 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,10 @@ void	stack_b_to_a(t_stack **a, t_stack **b)
 		}
 		pa(b, a);
 	}
+}
+
+void	k_sort(t_stack **a, t_stack **b)
+{
+	stack_a_to_b(a, b);
+	stack_b_to_a(a, b);
 }

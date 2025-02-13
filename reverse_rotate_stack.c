@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:16:43 by jocalder          #+#    #+#             */
-/*   Updated: 2025/01/29 18:24:41 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:32:52 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,17 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
 	rrb(b);
+}
+t_stack	*get_last(t_stack **stack)
+{
+	t_stack	*last;
+
+	last = *stack;
+	if (!*stack)
+		ft_error ();
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	return (last);
 }

@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:40:49 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/07 19:50:56 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/13 16:44:51 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,24 @@ void	sort_five(t_stack **a, t_stack **b)
 	pb(a, b);
 	sort_four(a, b);
 	pa(b, a);
+}
+
+void	sort_selector(t_stack **a, t_stack **b)
+{
+	int	large;
+
+	large = ft_list_size(*a);
+	if (large == 2)
+		sort_two(a);
+	else if (large == 3)
+		sort_three(a);
+	else if (large == 4)
+		sort_four(a, b);
+	else if (large == 5)
+		sort_five(a, b);
+	else
+	{
+		index_stack(*a);
+		k_sort(a, b);
+	}
 }

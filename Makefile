@@ -1,7 +1,7 @@
 NAME		= push_swap
 
 SRCS		= init_stacks.c main.c push_swap_utils.c swap_stack.c push_stack.c rotate_stack.c reverse_rotate_stack.c \
-				sorts.c ksort.c ft_square.c
+				sorts.c ksort.c k_sort_utils.c ft_free.c
 
 
 OBJS		= $(SRCS:.c=.o)
@@ -14,7 +14,7 @@ LIBFT_OBJS	= $(LIBFT_SRCS:.c=.o)
 
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-CC 		= cc
+CC 		= gcc -g
 
 FLAGS		= -Wall -Wextra -Werror
 

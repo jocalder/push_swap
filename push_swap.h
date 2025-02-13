@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:24:00 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/09 20:41:19 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/13 16:45:07 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,17 @@ void	sort_two(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	sort_five(t_stack **a, t_stack **b);
+void	sort_selector(t_stack **a, t_stack **b);
 void	stack_a_to_b(t_stack **a, t_stack **b);
 void	stack_b_to_a(t_stack **a, t_stack **b);
+void	k_sort(t_stack **a, t_stack **b);
+void	ft_free_stack(t_stack **stack);
+void	ft_free_both_stacks(t_stack **a, t_stack **b);
 void	ft_free_numbers(char **numbers);
+void	ft_free_exit(char **numbers, t_stack **stack, int EXIT);
 bool	is_valid_number(const char *str);
 bool	check_duplicate(char **numbers);
+bool	is_sorted(t_stack *a);
 long	ft_atol(const char *s);
 //void	print_stack(t_stack **stack);
 

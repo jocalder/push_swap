@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 19:15:54 by jocalder          #+#    #+#             */
-/*   Updated: 2025/02/04 17:15:47 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:45:24 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push(t_stack **from, t_stack **to)
 		(*from)->prev = NULL;
 	node->prev = NULL;
 	node->next = NULL;
-	if (!*to || !to)
+	if (!*to)
 		*to = node;
 	else
 	{
